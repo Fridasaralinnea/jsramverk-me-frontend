@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+// import { Subject } from "rxjs";
+// import { map } from "rxjs/operators";
 
 @Component({
-    selector: 'app-reports',
+    selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
 
-    constructor() {}
+    readonly ROOT_URL = "http://localhost:1337/";
 
-    ngOnInit(): void {}
+    homeData: any;
 
+    constructor(private http: HttpClient) {
+        this.http.get(this.ROOT_URL).toPromise().then(data => {
+            this.homeData = data;
+        });
+    }
+
+    ngOnInit(): void {
+    }
 }

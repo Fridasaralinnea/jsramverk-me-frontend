@@ -12,6 +12,9 @@
     <nav class="navbar">
         <a routerLink="/" routerLinkActive="active">Home</a>
         <a routerLink="/reports/week/1">Reports</a>
+        <a *ngIf="!isLoggedIn" routerLink="/register">Register</a>
+        <a *ngIf="!isLoggedIn" routerLink="/login">Log in</a>
+        <a *ngIf="isLoggedIn" routerLink="/logout">Log out</a>
     </nav>
 </div>
 

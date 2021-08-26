@@ -1,0 +1,25 @@
+
+<nav class="reportsnav">
+    <a routerLink="/reports/week/1">Kmom01</a> |
+    <a routerLink="/reports/week/2">Kmom02</a> |
+    <a routerLink="/reports/week/3">Kmom03</a> |
+    <a routerLink="/reports/week/4">Kmom04</a> |
+    <a routerLink="/reports/week/5">Kmom05</a> |
+    <a routerLink="/reports/week/6">Kmom06</a> |
+    <a routerLink="/reports/week/10">Kmom10</a>
+</nav>
+
+<h1>Edit {{ kmom.data.kmom }}</h1>
+
+<div class="form">
+    <form>
+        <div class="form-group">
+            <textarea name="info" class="infoText" [(ngModel)]="infotext" value="{{ kmom.data.info }}" rows="8" columns="80">{{ kmom.data.info }}</textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="saveReport()">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
