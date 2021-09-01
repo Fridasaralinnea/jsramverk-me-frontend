@@ -27,7 +27,7 @@ export class EditComponent implements OnInit, OnDestroy {
     kmom: any;
     isLoggedIn: boolean;
 
-    readonly ROOT_URL = "http://localhost:1337/reports/edit/";
+    readonly ROOT_URL = "https://me-api.fridasaralinnea.me/reports/edit/";
 
     constructor(
         private http: HttpClient,

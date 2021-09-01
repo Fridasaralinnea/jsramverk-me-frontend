@@ -15,7 +15,7 @@ export class RegisterService {
         private http: HttpClient
     ) { }
 
-    ROOT_URL = "http://localhost:1337/register";
+    ROOT_URL = "https://me-api.fridasaralinnea.me/register";
 
     register(email, password) {
             console.log("Register new user with email: ", email);

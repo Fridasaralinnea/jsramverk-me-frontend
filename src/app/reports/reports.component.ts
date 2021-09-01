@@ -25,7 +25,7 @@ export class ReportComponent implements OnInit {
     //     this.validToken = true;
     // }
 
-    readonly ROOT_URL = "http://localhost:1337/reports/week/";
+    readonly ROOT_URL = "https://me-api.fridasaralinnea.me/reports/week/";
     // readonly ROOT_URL = this.router.url;
     // this.validToken = JSON.parse(localStorage.getItem('jwt_token'));
 

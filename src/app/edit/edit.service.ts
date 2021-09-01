@@ -16,7 +16,7 @@ export class EditService {
 
     onReportUpdateEvent = new EventEmitter();
 
-    ROOT_URL = "http://localhost:1337/reports/edit";
+    ROOT_URL = "https://me-api.fridasaralinnea.me/reports/edit";
 
     edit(kmom: string, info: string) {
         console.log("edit kmom: ", kmom, " report: ", info);

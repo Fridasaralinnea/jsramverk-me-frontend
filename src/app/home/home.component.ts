@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-    readonly ROOT_URL = "http://localhost:1337/";
+    readonly ROOT_URL = "https://me-api.fridasaralinnea.me/";
 
     homeData: any;
 

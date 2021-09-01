@@ -16,7 +16,7 @@ export class LoginService {
         private http: HttpClient
     ) { }
 
-    ROOT_URL = "http://localhost:1337/login";
+    ROOT_URL = "https://me-api.fridasaralinnea.me/login";
 
     login(email: string, password: string) {
         console.log("login with email: ", email, " and password: ", password);
