@@ -10,48 +10,31 @@ const test = require("selenium-webdriver/testing");
 const firefox = require('selenium-webdriver/firefox');
 const webdriver = require("selenium-webdriver");
 
-var options = new firefox.Options();
-
-options.addArguments('--headless');
-
 const By = webdriver.By;
-
 
 // var driver = null;
 var profile = new firefox.Profile();
 var opts;
 var builder;
 
-
 profile.setAcceptUntrustedCerts(true);
 profile.setAssumeUntrustedCertIssuer(false);
 
-
-// opts = new firefox.Options();
-// opts.setProfile(profile);
-// builder = new webdriver.Builder().forBrowser('firefox');
-// builder.setFirefoxOptions(opts);
-// driver = builder.build();
-//
-// driver.get('https://www.google.com');
-// driver.quit();
-
-
 let browser;
 
-
 // Does not work with WSL!! Use cygwin
-
-
-
 // Test suite
 test.describe("Me-App", function() {
     test.beforeEach(function(done) {
         this.timeout(20000);
         opts = new firefox.Options();
         opts.setProfile(profile);
-        builder = new webdriver.Builder().forBrowser('firefox').withCapabilities(options.toCapabilities());
-        builder.setFirefoxOptions(opts);
+        // opts.addArguments('--headless');
+        // builder = new webdriver.Builder().forBrowser('firefox').withCapabilities(opts.toCapabilities());
+        builder = new webdriver.Builder().forBrowser('firefox');
+        // builder = new webdriver.Builder().forBrowser('firefox').setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
+        // builder.setFirefoxOptions(opts);
+        builder.setFirefoxOptions(new firefox.Options().headless());
         browser = builder.build();
 
         browser.get("https://jsramverk.fridasaralinnea.me/");
