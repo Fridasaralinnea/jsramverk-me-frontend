@@ -1,3 +1,8 @@
+[![Build Status](https://app.travis-ci.com/Fridasaralinnea/jsramverk-me-frontend.svg?branch=main)](https://app.travis-ci.com/Fridasaralinnea/jsramverk-me-frontend)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Fridasaralinnea/jsramverk-me-frontend/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/Fridasaralinnea/jsramverk-me-frontend/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/Fridasaralinnea/jsramverk-me-frontend/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/Fridasaralinnea/jsramverk-me-frontend/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/Fridasaralinnea/jsramverk-me-frontend/badges/build.png?b=main)](https://scrutinizer-ci.com/g/Fridasaralinnea/jsramverk-me-frontend/build-status/main)
+
 # MeFrontendAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
