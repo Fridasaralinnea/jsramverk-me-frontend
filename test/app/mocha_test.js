@@ -9,6 +9,11 @@ const assert = require("assert");
 const test = require("selenium-webdriver/testing");
 const firefox = require('selenium-webdriver/firefox');
 const webdriver = require("selenium-webdriver");
+
+var options = new firefox.Options();
+
+options.addArguments('--headless');
+
 const By = webdriver.By;
 
 
@@ -45,7 +50,7 @@ test.describe("Me-App", function() {
         this.timeout(20000);
         opts = new firefox.Options();
         opts.setProfile(profile);
-        builder = new webdriver.Builder().forBrowser('firefox');
+        builder = new webdriver.Builder().forBrowser('firefox').withCapabilities(options.toCapabilities());
         builder.setFirefoxOptions(opts);
         browser = builder.build();
 
