@@ -24,7 +24,9 @@ test.describe("Me-App", function() {
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
-        browser.get("http://localhost:4200/");
+        // browser.get("http://localhost:4200/");
+        browser.get("https://jsramverk.fridasaralinnea.me/");
+
         done();
     });
 
