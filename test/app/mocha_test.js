@@ -11,6 +11,27 @@ const firefox = require('selenium-webdriver/firefox');
 const webdriver = require("selenium-webdriver");
 const By = webdriver.By;
 
+
+// var driver = null;
+var profile = new firefox.Profile();
+var opts;
+var builder;
+
+
+profile.setAcceptUntrustedCerts(true);
+profile.setAssumeUntrustedCertIssuer(false);
+
+
+// opts = new firefox.Options();
+// opts.setProfile(profile);
+// builder = new webdriver.Builder().forBrowser('firefox');
+// builder.setFirefoxOptions(opts);
+// driver = builder.build();
+//
+// driver.get('https://www.google.com');
+// driver.quit();
+
+
 let browser;
 
 
@@ -22,10 +43,12 @@ let browser;
 test.describe("Me-App", function() {
     test.beforeEach(function(done) {
         this.timeout(20000);
-        browser = new webdriver.Builder().
-            withCapabilities(webdriver.Capabilities.firefox()).build();
+        opts = new firefox.Options();
+        opts.setProfile(profile);
+        builder = new webdriver.Builder().forBrowser('firefox');
+        builder.setFirefoxOptions(opts);
+        browser = builder.build();
 
-        // browser.get("http://localhost:4200/");
         browser.get("https://jsramverk.fridasaralinnea.me/");
 
         done();
@@ -35,6 +58,23 @@ test.describe("Me-App", function() {
         browser.quit();
         done();
     });
+
+
+    // test.beforeEach(function(done) {
+    //     this.timeout(20000);
+    //     browser = new webdriver.Builder().
+    //         withCapabilities(webdriver.Capabilities.firefox()).build();
+    //
+    //     // browser.get("http://localhost:4200/");
+    //     browser.get("https://jsramverk.fridasaralinnea.me/");
+    //
+    //     done();
+    // });
+    //
+    // test.afterEach(function(done) {
+    //     browser.quit();
+    //     done();
+    // });
 
 
     function goToNavLink(target) {
