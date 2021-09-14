@@ -1,0 +1,20 @@
+
+<h2>Websocket chat</h2>
+
+<h4 [hidden]="!userNick">Usernick: {{ userNick }}</h4>
+
+<div id="all-messages" class="all-messages">
+    <span class="chat-message"  *ngFor="let message of messagesArray">
+        <span class="chat-time" >{{ message.user }} {{ message.time }}:</span>
+        {{ message.message }}
+    </span>
+</div>
+
+<div [hidden]="userNick" >
+    <input class="chat-input" [(ngModel)]="nick" name="nick" placeholder="Set your usernick">
+    <button [disabled]="!nick || userNick" class="btn" (click)="setUserNick()">Enter a usernick to start chatting</button>
+</div>
+<div [hidden]="!userNick">
+    <input class="new-message" (keyup.enter)="sendMessage()" [(ngModel)]="message" name="message" placeholder="Write message here..">
+    <button class="btn" (click)="sendMessage()">Send message</button>
+</div>

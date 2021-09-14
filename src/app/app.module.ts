@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 // jhbbjbkb
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
+import { ChatService } from './chat/chat.service';
+import { EditService } from './edit/edit.service';
 
 // Custom components
 import { HomeComponent } from './home/home.component';
@@ -19,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditComponent } from './edit/edit.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ChatComponent } from './chat/chat.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -35,6 +38,7 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent, pathMatch: 'full' },
     { path: 'logout', component: LogoutComponent, pathMatch: 'full' },
+    { path: 'chat', component: ChatComponent, pathMatch: 'full' },
 
     // { path: '**', redirectTo: '/', pathMatch: 'full'},
 ];
@@ -47,7 +51,8 @@ const appRoutes: Routes = [
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
-    EditComponent
+    EditComponent,
+    ChatComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -63,7 +68,9 @@ const appRoutes: Routes = [
   ],
   providers: [
       RegisterService,
-      LoginService
+      LoginService,
+      EditService,
+      ChatService
   ],
   bootstrap: [AppComponent]
 })
