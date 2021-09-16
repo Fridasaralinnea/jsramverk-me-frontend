@@ -11,8 +11,8 @@ import io from 'socket.io-client';
 })
 export class ChatService {
     private socket;
-    // ROOT_URL = "https://socket-server.fridasaralinnea.me/";
-    ROOT_URL = "http://localhost:8300/";
+    ROOT_URL = "https://socket-server.fridasaralinnea.me/";
+    // ROOT_URL = "http://localhost:8300/";
 
     constructor(
         private router: Router,

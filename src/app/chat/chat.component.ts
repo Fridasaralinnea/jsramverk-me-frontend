@@ -31,8 +31,8 @@ export class ChatComponent implements OnInit, OnDestroy {
 
     // private editSubscription: Subscription;
 
-    // ROOT_URL = "https://socket-server.fridasaralinnea.me/";
-    ROOT_URL = "http://localhost:8300/";
+    ROOT_URL = "https://socket-server.fridasaralinnea.me/";
+    // ROOT_URL = "http://localhost:8300/";
 
     constructor(
         private http: HttpClient,
