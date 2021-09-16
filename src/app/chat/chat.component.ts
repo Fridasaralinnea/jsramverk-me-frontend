@@ -31,16 +31,35 @@ export class ChatComponent implements OnInit, OnDestroy {
 
     // private editSubscription: Subscription;
 
-    ROOT_URL = "https://socket-server.fridasaralinnea.me/";
+    // ROOT_URL = "https://socket-server.fridasaralinnea.me/";
+    ROOT_URL = "http://localhost:8300/";
 
     constructor(
         private http: HttpClient,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private chatService: ChatService) {}
+        private chatService: ChatService) {
+            this.http.get(this.ROOT_URL).toPromise().then(data => {
+                console.log("------------------");
+                console.log(data);
+                console.log(Object.keys(data).length);
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                    this.messagesArray.push(data[i]);
+                }
+            });
+        }
 
     ngOnInit() {
+        // this.chatService.oldMessages().subscribe(
+        //     msg => {
+        //         console.log("------------------");
+        //         console.log(msg);
+        //         for (let i = 0; i < msg.length; i++) {
+        //             this.messagesArray.push(msg[i]);
+        //         }
+        //     }
+        // )
         this.chatService.messages().subscribe(
             msg => {
                 console.log(msg);

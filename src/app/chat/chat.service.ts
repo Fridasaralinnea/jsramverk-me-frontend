@@ -11,7 +11,8 @@ import io from 'socket.io-client';
 })
 export class ChatService {
     private socket;
-    ROOT_URL = "https://socket-server.fridasaralinnea.me/";
+    // ROOT_URL = "https://socket-server.fridasaralinnea.me/";
+    ROOT_URL = "http://localhost:8300/";
 
     constructor(
         private router: Router,
@@ -21,16 +22,24 @@ export class ChatService {
     }
 
     public sendMessage(message) {
-        this.socket.emit('chat message', message);
+        this.socket.emit('chatMessage', message);
     }
 
     public messages = () => {
         return Observable.create((observer) => {
-            this.socket.on('chat message', (message) => {
+            this.socket.on('chatMessage', (message) => {
                 observer.next(message);
             });
         });
     }
+
+    // public oldMessages = () => {
+    //     return Observable.create((observer) => {
+    //         this.socket.on('oldMessages', (message) => {
+    //             observer.next(message);
+    //         });
+    //     });
+    // }
 
     // onReportUpdateEvent = new EventEmitter();
 
